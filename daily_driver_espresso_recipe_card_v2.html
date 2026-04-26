@@ -1,0 +1,148 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap');
+  .rc-wrap { font-family: 'DM Sans', sans-serif; background: #F5F2EC; color: #1a1a18; padding: 36px 40px 32px; max-width: 760px; margin: 0 auto; border: 0.5px solid #ccc9be; }
+  .rc-top-bar { display: flex; justify-content: space-between; align-items: center; font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; padding-bottom: 12px; border-bottom: 0.5px solid #c8c4b8; margin-bottom: 24px; }
+  .rc-top-bar span { color: #555; }
+  .rc-top-bar .dots { color: #bbb; margin: 0 8px; }
+  .rc-sub { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+  .rc-name { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 58px; line-height: 1; color: #1a1a18; letter-spacing: -0.01em; margin: 0; }
+  .rc-name-accent { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 58px; line-height: 1; color: #4a2800; margin: 0; }
+  .rc-desc { font-size: 12.5px; font-style: italic; color: #555; line-height: 1.6; margin: 14px 0 20px; max-width: 600px; border-top: 0.5px solid #c8c4b8; padding-top: 14px; }
+  .rc-method-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .rc-method-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-right: 10px; }
+  .rc-method-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #1a1a18; letter-spacing: -0.01em; }
+  .rc-badge { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; border: 0.5px solid #1a1a18; color: #1a1a18; padding: 4px 10px; border-radius: 20px; }
+  .rc-stats { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 0.5px solid #c8c4b8; border-bottom: 0.5px solid #c8c4b8; padding: 14px 0; margin-bottom: 16px; }
+  .rc-stat { padding: 0 12px 0 0; }
+  .rc-stat-label { font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+  .rc-stat-val { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #1a1a18; line-height: 1; }
+  .rc-stat-unit { font-size: 11px; color: #888; font-family: 'DM Sans', sans-serif; font-weight: 300; }
+  .rc-grind-block { border-bottom: 0.5px solid #c8c4b8; padding-bottom: 14px; margin-bottom: 16px; }
+  .rc-grind-label { font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+  .rc-grind-main { display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px; }
+  .rc-grind-val { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #1a1a18; }
+  .rc-grind-unit { font-size: 11px; color: #888; font-family: 'DM Sans', sans-serif; }
+  .rc-grinders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px 20px; margin-top: 8px; }
+  .rc-grinder-name { font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 2px; }
+  .rc-grinder-setting { font-size: 11.5px; font-weight: 500; color: #1a1a18; }
+  .rc-grinder-tag { font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; color: #c86a28; margin-left: 4px; }
+  .rc-section-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: #555; font-weight: 500; margin-bottom: 10px; }
+  .rc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; border-bottom: 0.5px solid #c8c4b8; padding-bottom: 16px; }
+  .rc-step { border-left: 2px solid #c8c4b8; padding-left: 10px; }
+  .rc-step-num { font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: #c86a28; margin-bottom: 2px; }
+  .rc-step-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: #1a1a18; margin-bottom: 2px; }
+  .rc-step-desc { font-size: 10.5px; color: #666; line-height: 1.5; }
+  .rc-step-highlight { font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #c86a28; font-weight: 500; margin-top: 4px; }
+  .rc-bottom { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 2px; }
+  .rc-flavors-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-bottom: 6px; }
+  .rc-flavors { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: #1a1a18; }
+  .rc-flavors-tag { font-family: 'Playfair Display', serif; font-style: italic; color: #c86a28; font-size: 15px; }
+  .rc-logo-area { text-align: right; }
+  .rc-logo-mark { font-size: 11px; font-weight: 500; color: #555; }
+  .rc-date { font-size: 9px; color: #aaa; letter-spacing: 0.08em; margin-top: 2px; }
+</style>
+
+<div class="rc-wrap">
+  <div class="rc-top-bar">
+    <div>
+      <span>All-Year Blend</span><span class="dots">·</span>
+      <span>Good Cup Coffee Co.</span><span class="dots">·</span>
+      <span>Espresso Recipe</span>
+    </div>
+    <div>Recipe Design — Mark Ybanez</div>
+  </div>
+
+  <div class="rc-sub">All-Year Blend &nbsp;·&nbsp; Cebu, Philippines &nbsp;·&nbsp; Medium Roast</div>
+  <div class="rc-name">Daily</div>
+  <div class="rc-name-accent">Driver.</div>
+
+  <div class="rc-desc">
+    Chocolate, biscuits, almonds — built for consistency and daily use. A medium-roasted all-year blend that holds its ground across espresso machines, shot to shot, season to season.
+  </div>
+
+  <div class="rc-method-row">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span class="rc-method-label">Brew Method</span>
+      <span class="rc-method-name">Espresso — Single Basket</span>
+    </div>
+    <span class="rc-badge">Espresso</span>
+  </div>
+
+  <div class="rc-stats">
+    <div class="rc-stat">
+      <div class="rc-stat-label">Dose</div>
+      <div class="rc-stat-val">18<span class="rc-stat-unit">g</span></div>
+    </div>
+    <div class="rc-stat">
+      <div class="rc-stat-label">Yield</div>
+      <div class="rc-stat-val">36<span class="rc-stat-unit">ml</span></div>
+    </div>
+    <div class="rc-stat">
+      <div class="rc-stat-label">Ratio</div>
+      <div class="rc-stat-val">1:2</div>
+    </div>
+    <div class="rc-stat">
+      <div class="rc-stat-label">Temp</div>
+      <div class="rc-stat-val">93<span class="rc-stat-unit">°C</span></div>
+    </div>
+    <div class="rc-stat">
+      <div class="rc-stat-label">Time</div>
+      <div class="rc-stat-val">27<span class="rc-stat-unit">s</span></div>
+    </div>
+  </div>
+
+  <div class="rc-grind-block">
+    <div class="rc-grind-label">Grind Size</div>
+    <div class="rc-grind-main">
+      <span class="rc-grind-val">200–300</span>
+      <span class="rc-grind-unit">μm &nbsp; fine espresso</span>
+    </div>
+    <div class="rc-grinders">
+      <div>
+        <div class="rc-grinder-name">Lagom P100 <span class="rc-grinder-tag">Primary</span></div>
+        <div class="rc-grinder-setting">1.0–1.5 setting</div>
+      </div>
+      <div>
+        <div class="rc-grinder-name">EK43</div>
+        <div class="rc-grinder-setting">1.0–1.5 setting</div>
+      </div>
+      <div>
+        <div class="rc-grinder-name">Comandante C40</div>
+        <div class="rc-grinder-setting">8–10 clicks</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rc-section-label">Shot Protocol &nbsp;·&nbsp; Pre-infuse → Ramp → Extract → Stop</div>
+
+  <div class="rc-steps">
+    <div class="rc-step">
+      <div class="rc-step-num">Step 01 · 0:00</div>
+      <div class="rc-step-title">Pre-infusion</div>
+      <div class="rc-step-desc">Low pressure ramp. Saturate the puck evenly. Allow 3–5s at 3–4 bar before full pressure.</div>
+    </div>
+    <div class="rc-step">
+      <div class="rc-step-num">Step 02 · 0:05</div>
+      <div class="rc-step-title">Extraction</div>
+      <div class="rc-step-desc">Ramp to full pressure (9 bar). Watch first drops — aim for slow, even flow with no blonding early.</div>
+    </div>
+    <div class="rc-step">
+      <div class="rc-step-num">Step 03 · 0:27</div>
+      <div class="rc-step-title">Stop</div>
+      <div class="rc-step-desc">Pull at 36ml yield. Stop before blonding. Swirl and serve immediately.</div>
+      <div class="rc-step-highlight">Cup ready</div>
+    </div>
+  </div>
+
+  <div class="rc-bottom">
+    <div>
+      <div class="rc-flavors-label">Expected in the Cup</div>
+      <div class="rc-flavors">Chocolate &nbsp;·&nbsp; Biscuits &nbsp;·&nbsp; Almonds &nbsp;— <span class="rc-flavors-tag">rich, balanced, reliable.</span></div>
+    </div>
+    <div class="rc-logo-area">
+      <div class="rc-logo-mark">☕ Good Cup</div>
+      <div class="rc-date">April 26 · 2026</div>
+    </div>
+  </div>
+</div>
